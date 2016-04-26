@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>
+      Scale
+    </title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/tachyons.css">
+  </head>
+  <body class="h-100 dt w-100">
+    <div class="dtc v-mid">
+      <h1 class="ttu f4 f2-ns gray tc pv3">Your browser has
+        <span id="window-size" class="dark-gray"></span>
+        pixels
+      </h1>
+    </div>
+
+    <script type="text/javascript" charset="utf-8" src="js/jquery-2.2.3.min.js"> </script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        var bodyWidth = $('body').width();
+        var bodyHeight = $('body').height();
+        var bodyPixels = bodyWidth * bodyHeight;
+        var solarSystemSize = 75000000000; // radius in km
+        var earthRadius = 6371; //radius in km
+        $("#window-size").text(bodyPixels)
+        $( window ).resize(function() {
+          bodyWidth = $('body').width();
+          bodyHeight = $('body').height();
+          bodyPixels = bodyWidth * bodyHeight;
+          $("#window-size").text(bodyPixels)
+        });
+      });
+    </script>
+
+  </body>
+</html>
